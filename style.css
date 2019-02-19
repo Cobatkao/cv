@@ -1,0 +1,193 @@
+/* css reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+/* css layout */
+.ct {
+  display: grid;
+  width: 100vw;
+  grid: auto auto / 1fr 300px 700px 1fr;
+  padding-bottom: 129px;
+}
+
+header {
+  grid-row: 1;
+  grid-column: 1 / span 4;
+}
+
+aside {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+main {
+  grid-row: 2;
+  grid-column: 3;
+  margin-left: 40px;
+}
+
+@media all and (max-width: 1000px) {
+  .ct {
+    grid: 100px 400px / 1fr 200px 400px 1fr;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .ct {
+    grid: 100px 400px 200px / 1fr;
+  }
+  header {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  aside {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  main {
+    grid-row: 3;
+    grid-column: 1;
+  }
+  aside, main {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+/* common css */
+
+header, aside, main {
+  font: 16px/1.5 Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
+}
+
+/* particular css */
+
+header {
+  text-align: center;
+  padding: 30px;
+  background: #444;
+  color: aliceblue;
+}
+
+header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+header figcaption, header p {
+  margin-top: 10px;
+}
+
+header figcaption {
+  font-weight: bold;
+}
+
+header p {
+  font-size: 13px;
+}
+
+header p span {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+section {
+  display: grid;
+  grid: auto auto / 50px 120px 1fr;
+  align-items: center;
+  color: #000;
+  margin-top: 30px;
+}
+
+section span:nth-child(1) {
+  color: #fff;
+}
+
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+section .iconfont {
+  grid-row: 1;
+  grid-column: 1;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #007bff;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section > h2 {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+section > hr {
+  grid-row: 1;
+  grid-column: 3;
+  border: none;
+  height: 3px;
+  background: #007bff;
+}
+
+section > .detail {
+  grid-row: 2;
+  grid-column: 2 / span 2;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+section .info-detail .iconfont {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  font-size: 22px;
+  margin-right: 10px;
+  background: transparent;
+}
+
+section .info-detail li {
+  display: flex;
+  align-items: center;
+}
+
+section .info-detail li:nth-child(1) span {
+  margin: 0 10px 0 0;
+}
+
+section .info-detail.skill li {
+  border-left: 3px solid #007bff;
+  margin-top: 1.2em;
+  padding-left: 10px;
+}
+
+section .skill-bar dt {
+  font-weight: 500;
+  margin-top: .4em;
+}
+
+section .skill-bar dd {
+  height: 3px;
+  background: #eaeaea;
+  margin-top: 1em;
+}
+
+section .skill-bar dd p {
+  height: 100%;
+  background: #007bff;
+}
+
