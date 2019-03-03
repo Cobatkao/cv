@@ -13,7 +13,6 @@ a {
   font-style: italic;
   color: #007bff;
   cursor: pointer;
-  display: block;
   margin-bottom: 5px;
 }
 
@@ -21,57 +20,66 @@ a {
 .ct {
   display: grid;
   width: 100vw;
-  grid: auto auto / 1fr 300px 700px 1fr;
+  grid: auto auto / 13% 1fr 1.4fr 13%;
   padding-bottom: 129px;
-  background: rgba(0, 123, 255, .03);
+  background: #eeeeee;
+}
+
+aside, main {
+  background: #f3f8ff;
 }
 
 header {
   grid-row: 1;
-  grid-column: 1 / span 4;
+  grid-column: 2 / span 2;
+  margin-top: 2em;
 }
 
 aside {
   grid-row: 2;
   grid-column: 2;
+  padding-left: 15px;
+  padding-bottom: 10px;
 }
 
 main {
   grid-row: 2;
   grid-column: 3;
-  margin-left: 40px;
+  padding-left: 40px;
+  padding-right: 15px;
+  padding-bottom: 10px;
 }
 
 @media all and (max-width: 1000px) {
   .ct {
-    grid: 100px 400px / 1fr 200px 400px 1fr;
+    grid: auto auto / 13% 1fr 1.4fr 13%;
   }
 }
 
 @media all and (max-width: 768px) {
   .ct {
-    grid: 100px 400px 200px / 1fr;
+    display: grid;
+    width: 100%;
+    grid-template-areas: "Header"
+                          "Aside"
+                          "Main";
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
   }
-
+  header, aside, main {
+    padding: 0 15px 0 15px;
+  }
   header {
-    grid-row: 1;
-    grid-column: 1;
+    grid-area: Header;
   }
 
   aside {
-    grid-row: 2;
-    grid-column: 1;
+    grid-area: Aside;
   }
 
   main {
-    grid-row: 3;
-    grid-column: 1;
-  }
-
-  aside,
-  main {
-    margin-left: 5px;
-    margin-right: 5px;
+    grid-area: Main;
+    padding-bottom: 20px;
   }
 }
 
@@ -109,6 +117,7 @@ header img {
 header figcaption,
 header p {
   margin-top: 10px;
+  font-size: 24px;
 }
 
 header figcaption {
@@ -116,7 +125,7 @@ header figcaption {
 }
 
 header p {
-  font-size: 13px;
+  font-size: 16px;
 }
 
 header p span {
@@ -183,8 +192,8 @@ section>.detail {
 }
 
 section .info-detail .iconfont {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
   font-size: 22px;
   margin-right: 10px;
@@ -257,9 +266,4 @@ section .detail p {
 
 section .detail .project:nth-child(1) {
   margin-top: 0;
-}
-
-section .in-wrap .job-history {
-  display: flex;
-  justify-content: space-between;
 }
