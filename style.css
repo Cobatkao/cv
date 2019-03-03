@@ -71,6 +71,7 @@ main {
   }
   header {
     grid-area: Header;
+    margin-top: 0;
   }
 
   aside {
