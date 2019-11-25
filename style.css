@@ -21,7 +21,7 @@ a {
   display: grid;
   width: 100vw;
   grid: auto auto / 13% 1fr 1.4fr 13%;
-  padding-bottom: 129px;
+  /*padding-bottom: 129px;*/
   background: #eeeeee;
 }
 
